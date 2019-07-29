@@ -8,12 +8,30 @@ namespace TwentyOne
 {
     public class Card
     {
-        public Card() // CONSTRUCTOR SHOULD BE SET TO BE THE SAME NAME OF THE CLASS
-        {
-            Suit = "Spades";
-            face = "Two";
-        }
-        public string Suit { get; set; }
-        public string face { get; set; }
+        public Suit Suit { get; set; }
+        public Face face { get; set; }
+    }
+    public enum Suit
+    {
+        Spades,
+        Clubs,
+        Diamonds,
+        Hearts
+    }
+    public enum Face
+    {
+        Two,
+        Three,
+        Four,
+        Five,
+        Six,
+        Seven,
+        Eight,
+        Nine,
+        Ten,
+        Jack,
+        Queen,
+        King,
+        Ace
     }
 }
