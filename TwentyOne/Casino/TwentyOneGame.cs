@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TwentyOne
+namespace Casino.TwentyOne
 {
     public class TwentyOneGame : Game, IWalkAway
     {
@@ -23,11 +23,20 @@ namespace TwentyOne
             Dealer.Deck = new Deck();
             Dealer.Deck.Shuffle();
 
-            Console.Write("Place your bet!");
-
             foreach (Player player in Players)
             {
-                int bet = Convert.ToInt32(Console.ReadLine());
+                bool validAnswer = false;
+                int bet = 0;
+                while (!validAnswer)
+                {
+                    Console.WriteLine("Place your bet!");
+                    validAnswer = int.TryParse(Console.ReadLine(), out bet);
+                    if (!validAnswer) Console.WriteLine("Please  enter digits only. No decimals.");
+                }
+                if (bet < 0)
+                {
+                    throw new FraudException("This action is not allowed! Security has been notified.");
+                }
                 bool successfullyBet = player.Bet(bet);
                 if (!successfullyBet)
                 {
@@ -80,12 +89,12 @@ namespace TwentyOne
                     }
                     Console.WriteLine("\n\nHit or stay?");
                     string answer = Console.ReadLine().ToLower();
-                    if (answer == "stay")
+                    if (answer == "stay" || answer == "s")
                     {
                         player.Stay = true;
                         break;
                     }
-                    else if (answer == "hit")
+                    else if (answer == "hit" || answer == "h")
                     {
                         Dealer.Deal(player.Hand);
                     }
