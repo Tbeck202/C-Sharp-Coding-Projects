@@ -1,0 +1,91 @@
+﻿<div class="row no-gutters m-3">
+    <div class="card col-sm-12 col-md-10 col-lg-6 mx-auto">
+        <div class="card-header text-center">
+            <h3 class="m-3">Columbia Coast Insurance</h3>
+            <h6 class="m-0">Your home for the very best in auto insurance.</h6>
+            <p>Please answer some questions so we can get the best possible quote for you.</p>
+            <hr />
+            @using (Html.BeginForm("Quote", "Home", FormMethod.Post))
+            {
+                <!--First Name-->
+            <div class="row no-gutters justify-content-center">
+                <div class="form-group col-md-12">
+                    <p>What is your first name?</p>
+                    <input type="text" name="FirstName" class="form-control" />
+                </div>
+                <!--Last Name-->
+                <div class="form-group col-md-12">
+                    <p>What is your last name?</p>
+                    <input type="text" name="LastName" class="form-control" />
+                </div>
+                <!--Email-->
+                <div class="form-group col-md-12">
+                    <p>What is your email address?</p>
+                    <input type="email" name="Email" class="form-control" />
+                </div>
+                <!--DOB-->
+                <div class="form-group col-md-12 justify-content-center">
+                    <p>What is your date of birth?</p>
+                    <div class="col-6 m-auto">
+                        <input type="date" name="Dob" class="form-control" />
+                    </div>
+                </div>
+                <!--Car year-->
+                <div class="form-group col-md-12 justify-content-center">
+                    <p>What year was your car manufactured?</p>
+                    <div class="col-4 m-auto">
+                        <input type="number" name="CarYear" min="1900" max="2019" step="1" class="form-control" />
+                    </div>
+                </div>
+                <!--Car make-->
+                <div class="form-group col-md-12">
+                    <p>What is the make of your car?</p>
+                    <input type="text" name="CarMake" class="form-control" />
+                </div>
+                <!--car Model-->
+                <div class="form-group col-md-12">
+                    <p>What is the model of your car?</p>
+                    <input type="text" name="CarModel" class="form-control" />
+                </div>
+                <!--DUI-->
+                <div class="container">
+                    <div class="form-group custom-control custom-radio">
+                        <p>Do you have any DUI's?</p>
+                        <input type="radio" name="Dui" value="No" class="custom-control-input" id="no" checked />
+                        <label class="custom-control-label" for="no">No</label>
+                    </div>
+                    <div class="form-group custom-control custom-radio">
+                        <input type="radio" name="Dui" value="Yes" class="custom-control-input" id="yes" />
+                        <label class="custom-control-label" for="yes">Yes</label>
+                    </div>
+                </div>
+                <!--Speeding tickets-->
+                <div class="form-group col-md-12 justify-content-center">
+                    <div>
+                        <p>How many speeding tickets have you have (if any)?</p>
+                    </div>
+                    <div class="col-3 m-auto">
+                        <input type="number" name="speedTick" min="0" max="1000" step="1" value="0" class="form-control" />
+                    </div>
+                </div>
+                <!--Coverage-->
+                <div class="container">
+                    <div class="form-group custom-control custom-radio">
+                        <p>What kind of coverage do you need?</p>
+                        <input type="radio" name="coverage" value="full" class="custom-control-input" id="full" checked />
+                        <label class="custom-control-label" for="full">Full coverage</label>
+                    </div>
+                    <div class="form-group custom-control custom-radio">
+                        <input type="radio" name="coverage" value="liability" class="custom-control-input" id="liability" />
+                        <label class="custom-control-label" for="liability">Liability coverage</label>
+                    </div>
+                </div>
+                <!--Submit-->
+                <button class="btn-success btn-sm col-3" type="submit">Get my Quote!</button>
+
+            </div>
+
+                }
+            </div>
+    </div>
+</div>
