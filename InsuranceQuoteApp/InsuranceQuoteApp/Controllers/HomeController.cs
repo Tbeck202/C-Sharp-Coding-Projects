@@ -18,18 +18,25 @@ namespace InsuranceQuoteApp.Controllers
             return View();
         }
 
-        public ActionResult about()
+        [HttpPost]
+        public ActionResult Quote(
+            string firstName, string lastName, string email, DateTime dob, int carYear, string carMake, string carModel, bool dui, int speedTick, bool coverage)
         {
-            ViewBag.message = "your application description page.";
-
-            return View();
-        }
-
-        public ActionResult contact()
-        {
-            ViewBag.message = "your contact page.";
-
-            return View();
+            return View("~/Views/Home/Index");
         }
     }
 }
+
+//public ActionResult about()
+//{
+//    ViewBag.message = "your application description page.";
+
+//    return View();
+//}
+
+//public ActionResult contact()
+//{
+//    ViewBag.message = "your contact page.";
+
+//    return View();
+//}
