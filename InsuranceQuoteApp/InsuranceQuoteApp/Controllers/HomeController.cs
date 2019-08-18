@@ -1,4 +1,5 @@
 ﻿using InsuranceQuoteApp.Models;
+using InsuranceQuoteApp.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -52,27 +53,33 @@ namespace InsuranceQuoteApp.Controllers
                 quote.Dui = dui;
                 quote.SpeedTick = speedTick;
                 quote.Coverage = coverage;
-                quote.TotalQuote = newQuote.TotalQuote;
+                quote.TotalQuote = Math.Round(Convert.ToDecimal(newQuote.TotalQuote), 2);
 
 
                 db.Quotes.Add(quote);
                 db.SaveChanges();
             }
-            return View("~/Views/Home/Index");
+            return View(new QuoteVm(newQuote.TotalQuote));
+        }
+
+        public ActionResult Admin()
+        {
+            using (InsuranceQuoteEntities db = new InsuranceQuoteEntities())
+            {
+                var quotes = db.Quotes;
+                var adminVms = new List<AdminVm>();
+                foreach (var quote in quotes)
+                {
+                    var adminVm = new AdminVm();
+                    adminVm.FirstName = quote.FirstName;
+                    adminVm.LastName = quote.LastName;
+                    adminVm.Email = quote.Email;
+                    adminVm.TotalQuote = Math.Round(Convert.ToDecimal(quote.TotalQuote), 2);
+                    adminVms.Add(adminVm);
+                }
+                return View(adminVms);
+            }
+            
         }
     }
 }
-
-//public ActionResult about()
-//{
-//    ViewBag.message = "your application description page.";
-
-//    return View();
-//}
-
-//public ActionResult contact()
-//{
-//    ViewBag.message = "your contact page.";
-
-//    return View();
-//}

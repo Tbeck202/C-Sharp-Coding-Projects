@@ -1,0 +1,46 @@
+﻿@using InsuranceQuoteApp.ViewModels
+@model List<AdminVm>
+
+<div class="row no-gutters m-3">
+    <div class="card col-sm-12 col-md-12 col-lg-10 mx-auto">
+        <div class="card-header text-center">
+            <h3 class="m-3">Columbia Coast Insurance</h3>
+            <h6 class="m-0">Admin</h6>
+            <!--------------Refactor as table in future------------->
+            <div class="card-body">
+                <div class="row">
+                    <div class="col">
+                        First Name
+                    </div>
+                    <div class="col">
+                        Last Name
+                    </div>
+                    <div class="col">
+                        Email Address
+                    </div>
+                    <div class="col">
+                        Quote
+                    </div>
+                </div>
+                <hr />
+                @foreach (var quote in Model)
+                {
+                        <div class="row">
+                            <div class="col">
+                                @quote.FirstName
+                            </div>
+                            <div class="col">
+                                @quote.LastName
+                            </div>
+                            <div class="col">
+                                @quote.Email
+                            </div>
+                            <div class="col">
+                                $@quote.TotalQuote
+                            </div>
+                        </div>
+                }
+            </div>
+        </div>
+    </div>
+</div>

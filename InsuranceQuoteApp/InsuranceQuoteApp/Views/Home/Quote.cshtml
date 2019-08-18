@@ -1,0 +1,14 @@
+﻿@using InsuranceQuoteApp.ViewModels
+@model QuoteVm
+
+<div class="row no-gutters m-3">
+    <div class="card col-sm-12 col-md-10 col-lg-6 mx-auto">
+        <div class="card-header text-center">
+            <h3 class="m-3">Columbia Coast Insurance</h3>
+            <h6 class="m-0">Your instatnt quote!</h6>
+            <div class="card-body">
+                <p>Based on your application, your policy would cost <span class="alert-success font-weight-bold">$@Model.totalQuote</span> per month.</p>
+            </div>
+        </div>
+    </div>
+</div>
