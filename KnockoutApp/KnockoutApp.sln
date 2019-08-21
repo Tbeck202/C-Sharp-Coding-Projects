@@ -1,0 +1,42 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27130.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "KnockoutApp", "KnockoutApp\", "{576B7746-676C-470A-B3DD-2430EC63027C}"
+	ProjectSection(WebsiteProperties) = preProject
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.6.1"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_50135"
+		Debug.AspNetCompiler.PhysicalPath = "KnockoutApp\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_50135\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost_50135"
+		Release.AspNetCompiler.PhysicalPath = "KnockoutApp\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_50135\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "50135"
+		SlnRelativePath = "KnockoutApp\"
+		DefaultWebSiteLanguage = "Visual C#"
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{576B7746-676C-470A-B3DD-2430EC63027C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{576B7746-676C-470A-B3DD-2430EC63027C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8484A68E-FC91-485E-BC3D-910A31D7D9FE}
+	EndGlobalSection
+EndGlobal

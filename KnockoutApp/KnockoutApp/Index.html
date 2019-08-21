@@ -1,0 +1,78 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Knockout JS</title>
+
+    <link rel="stylesheet" href="Style/Style.css" />
+    
+</head>
+<body>
+    <div class="container">
+
+        <h1>Knockout JS</h1>
+        <P>
+            <span class="fName" data-bind="text:fName">Tyler</span> is a <span class="occupation" data-bind="text: occupation">photographer</span> in <span class="city" data-bind="text: city">Portland</span>,
+            <span class="state" data-bind="text: state">Oregon</span> who <span class="description" data-bind="text: description">is learning how to use Knockout JS to go along with other skills he learned at the Tech Academy</span>.
+        </P>
+
+        <h2>Fill out the info below to make this page about you!</h2>
+
+        <ul class=inputs>
+            <li>
+                <label for="fName">First Name:</label>
+                <input type="text" id="fName" data-bind="value: fName, valueUpdate, 'afterkeydown'">
+            </li>
+
+            <li>
+                <label for="occupation">Occupation:</label>
+                <input type="text" name="occupation" id="occupation" data-bind="value: occupation">
+            </li>
+
+            <li>
+                <label for="city">City:</label>
+                <input type="text" name="city" id="city" data-bind="value: city">
+            </li>
+
+            <li>
+                <label for="state">State:</label>
+                <input type="text" name="state" id="state" data-bind="value: state">
+            </li>
+
+            <li>
+                <label for="description">Tell us a little about yourself!</label>
+                <br />
+                <textarea type="text" name="description" id="description" data-bind="value: description" rows="4" cols="30"></textarea>
+            </li>
+        </ul>
+    </div>
+
+    <h2>Click the button to see a cool picture of Joshua Tree!</h2>
+    <button class="btn" data-bind="click: showPic">Click here!</button>
+
+    <div class="photoContainer" data-bind="visible: showPic">
+        <img src="https://i.imgur.com/8zryoDD.jpg" alt="Joshua tree">
+    </div>
+
+    <script src="Scripts/knockout-3.5.0.js"></script>
+    <script>
+
+        //function vm() {
+        //    this.fName = ko.observable("Tyler");
+        //}
+
+        //ko.applyBindings(new vm());
+
+        var vm = {
+            fName: ko.observable("Tyler"),
+            occupation: ko.observable("photographer"),
+            city: ko.observable("Portland"),
+            state: ko.observable("Oregon"),
+            description: ko.observable("is learning how to use Knockout JS to go along with other skills he learned at the Tech Academy"),
+            showPic: ko.observable(false),
+        };
+        ko.applyBindings(vm);
+
+    </script>
+</body>
+</html>
