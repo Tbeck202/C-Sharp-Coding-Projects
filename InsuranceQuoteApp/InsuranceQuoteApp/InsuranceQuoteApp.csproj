@@ -232,7 +232,8 @@
       <DependentUpon>Quote.edmx</DependentUpon>
     </Content>
     <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
-    <None Include="Properties\PublishProfiles\InsuranceQuoteApp - Web Deploy.pubxml" />
+    <None Include="Properties\PublishProfiles\InsuranceAppDemo - Web Deploy.pubxml" />
+    <None Include="Properties\PublishProfiles\InsuranceQuoteAppDemo - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
