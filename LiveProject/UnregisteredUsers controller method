@@ -1,0 +1,6 @@
+//Display _UnregisteredUsers on All User View when requested by Admin
+        public ActionResult _UnregisteredUsers()
+        {
+            var model = db.CreateUserRequests.ToList();
+            return PartialView("_unregisteredusers", model);
+        }
